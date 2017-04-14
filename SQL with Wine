@@ -40,20 +40,14 @@ To combine the tables, I need to know what the data are like for other csv files
 I performed .schema on each of the csv files - Appellations and Grapes.
 The result is the following: 
 
-sqlite> .schema wine
-CREATE TABLE wine(
-  "No" TEXT,
+
+sqlite> .schema GRAPES
+CREATE TABLE GRAPES(
+  "ID" TEXT,
   "Grape" TEXT,
-  "Winery" TEXT,
-  "Appelation" TEXT,
-  "State" TEXT,
-  "Name" TEXT,
-  "Year" TEXT,
-  "Price" TEXT,
-  "Score" TEXT,
-  "Cases" TEXT,
-  "Drink" TEXT
+  "Color" TEXT
 );
+
 sqlite> .schema APPELLATIONS
 CREATE TABLE APPELLATIONS(
   "No" TEXT,
