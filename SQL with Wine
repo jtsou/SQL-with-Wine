@@ -1,0 +1,36 @@
+
+SQL FUN WITH WINE DATA SET
+Jennifer Tsou
+
+
+Introduction
+As a wine enthusiast, choosing the right wine for the right mood along with the struggle of getting the right quality of wine can get frustrating. There are apps such as Vivino that can help me, but doing research and make informed decision based on my analysis before choosing wine at dinner is always a good practice...and fun. 
+Process
+I start the process by downloading dataset from the internet. The dataset has three csv files. Wine.csv, Grapes.csv, and Appellations.csv. To extract data from each table to reach my desired result, I performed aggregation function and multiple join table operations. 
+I will show my process as below later.
+Design
+I started wanting to explore the size of data set. But to do that first, I need to know the variables in the data. After I typed in .schema wine (I imported the csv file under the name wine), list of variables came out. 
+sqlite> .schema wine
+CREATE TABLE wine(
+  "No" TEXT,
+  "Grape" TEXT,
+  "Winery" TEXT,
+  "Appelation" TEXT,
+  "State" TEXT,
+  "Name" TEXT,
+  "Year" TEXT,
+  "Price" TEXT,
+  "Score" TEXT,
+  "Cases" TEXT,
+  "Drink" TEXT
+);
+
+I then performed count function to find out the data size:
+sqlite> SELECT count(*) FROM wine;
+500
+
+With that information in mind, I have an idea of the size of data. 
+I want to find out first what is the highest score that is associated with the Winery, and the Grape as well:
+sqlite> SELECT max(score), Winery, Grape FROM wine;
+98,"'Sine Qua Non'","'Syrah'"
+
