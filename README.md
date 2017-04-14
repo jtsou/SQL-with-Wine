@@ -1,5 +1,5 @@
 # WINE
-SQLite to explore wine 
+<h1>SQLite to explore wine </h1>
 
 		              WINE DATASET
                    Version 1.0
