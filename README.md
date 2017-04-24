@@ -93,4 +93,36 @@ sqlite> SELECT wine.Winery, wine.Score, wine.Grape, GRAPES.Grape FROM wine LEFT 
 <ul>"'Caymus'",94,"'Cabernet Sauvingnon'","'Cabernet Sauvingnon’"
 </ul>
 
+I also would want to find out what Area produce the best quality wine, looks like North Coast is the winner with Cabernet Sauvingnon. This makes me think that North Coast area produce the best Cabernet Sauvingnon grapes.
 
+sqlite> SELECT wine.Winery, wine.Score, wine.Grape, APPELLATIONS.Area FROM wine JOIN APPELLATIONS on wine.No = APPELLATIONS.No GROUP BY Score ORDER BY Score DESC LIMIT 10;
+
+<ul>"'Chappellet'",96,"'Cabernet Sauvingnon'","'North Coast'"</ul>
+<ul>"'Ramey'",95,"'Cabernet Sauvingnon'","'North Coast'"</ul>
+<ul>"'Round Pond Estate'",94,"'Cabernet Sauvingnon'","'North Coast'"</ul>
+<ul>"'Chiarello Family'",93,"'Zinfandel'","'Sierra Foothills'"</ul>
+<ul>"'Janzen'",92,"'Cabernet Sauvingnon'","'North Coast'"</ul>
+<ul>"'Peter Michael'",91,"'Sauvignon Blanc'","'Central Coast'"</ul>
+<ul>"'Round Pond Estate'",90,"'Sauvignon Blanc'","'North Coast'"</ul>
+<ul>"'Selene'",89,"'Sauvignon Blanc'","'North Coast'"</ul>
+<ul>"'Sbragia Family'",88,"'Sauvignon Blanc'","'North Coast'"</ul>
+<ul>"'White Oak'",87,"'Sauvignon Blanc'","'North Coast'"</ul>
+
+<p>
+North Coast is a huge area, so I want to narrow down the geographical location more.
+</p>
+
+sqlite> SELECT wine.Winery, wine.Score, wine.Grape, APPELLATIONS.Area, APPELLATIONS.County FROM wine JOIN APPELLATIONS on wine.No = APPELLATIONS.No GROUP BY Score ORDER BY Score DESC LIMIT 10;
+
+<ul>"'Chappellet'",96,"'Cabernet Sauvingnon'","'North Coast'","'Sonoma'"</ul>
+<ul>"'Ramey'",95,"'Cabernet Sauvingnon'","'North Coast'","'N/A'"</ul>
+<ul>"'Round Pond Estate'",94,"'Cabernet Sauvingnon'","'North Coast'","'Napa'"</ul>
+<ul>"'Chiarello Family'",93,"'Zinfandel'","'Sierra Foothills'","'Amador'"</ul>
+<ul>"'Janzen'",92,"'Cabernet Sauvingnon'","'North Coast'","'Napa'"</ul>
+<ul>"'Peter Michael'",91,"'Sauvignon Blanc'","'Central Coast'","'Monterey'"</ul>
+<ul>"'Round Pond Estate'",90,"'Sauvignon Blanc'","'North Coast'","'Sonoma'"</ul>
+<ul>"'Selene'",89,"'Sauvignon Blanc'","'North Coast'","'Mendocino'"</ul>
+<ul>"'Sbragia Family'",88,"'Sauvignon Blanc'","'North Coast'","'Napa'"</ul>
+<ul>"'White Oak'",87,"'Sauvignon Blanc'","'North Coast'","'Napa'"</ul>
+
+Napa and Sonoma produce the top rated wine.
