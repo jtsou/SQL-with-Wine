@@ -7,7 +7,7 @@ As a wine enthusiast, choosing the right wine for the right mood along with the 
 
 <h1>Process</h1>
 <p>
-I start the process by downloading dataset from the internet. The dataset has three csv files. Wine.csv, Grapes.csv, and Appellations.csv. To extract data from each table to reach my desired result, I performed aggregation function and multiple join table operations. 
+I start the process by downloading dataset from the internet. The dataset has three csv files. Wine.csv, Grapes.csv, and Appellations.csv. To extract data from each table to reach my desired result, I performed aggregation function and multiple join table operations. I plan to use SQLITE3 because it is built-in with Mac OS system. Although, the function is limited, it does the trick.
 I will show my process as below later.
 </p>
 
@@ -126,3 +126,6 @@ sqlite> SELECT wine.Winery, wine.Score, wine.Grape, APPELLATIONS.Area, APPELLATI
 <ul>"'White Oak'",87,"'Sauvignon Blanc'","'North Coast'","'Napa'"</ul>
 
 Napa and Sonoma produce the top rated wine.
+
+<h3>Reflection </h3>
+This is a rather short project; however, I was able to practice SQL with it. From the data extraction, we can roughly see how Napa and Sonoma produce the top rated wine, regardless of year. So next time I know what to get if I feel adventurous. 
