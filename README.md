@@ -128,4 +128,4 @@ sqlite> SELECT wine.Winery, wine.Score, wine.Grape, APPELLATIONS.Area, APPELLATI
 Napa and Sonoma produce the top rated wine.
 
 <h3>Reflection </h3>
-This is a rather short project; however, I was able to practice SQL with it. From the data extraction, we can roughly see how Napa and Sonoma produce the top rated wine, regardless of year. So next time I know what to get if I feel adventurous. 
+This is a rather short project; however, I was able to practice SQL with it. From the data extraction, we can roughly see how Napa and Sonoma produce the top rated wine, regardless of year. So next time I know what to get if I feel adventureous. 
